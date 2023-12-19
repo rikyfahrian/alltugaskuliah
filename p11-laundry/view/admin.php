@@ -15,14 +15,43 @@
     if ($_SESSION["status"] != "login") {
         header("Location:../index.php?pesan=blumlogineuy");
     }
+    ?>
+
+    <?php
+    $navbar = " <header>
+       <nav class='navbar navbar-expand-lg bg-dark  '>
+           <div class='container '>
+               <a class='navbar-brand fw-bold text-light' href='admin.php'>Laundrymu</a>
+               <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                   <span class='navbar-toggler-icon'></span>
+               </button>
+               <div class='collapse navbar-collapse' id='navbarNav'>
+                   <ul class='navbar-nav ms-auto'>
+                       <li class='nav-item'>
+                           <a class='nav-link active text-light' aria-current='page' href='admin.php'>Home</a>
+                       </li>
+                       <li class='nav-item'>
+                           <a class='nav-link text-light' href='pelanggan.php'>Pelanggan</a>
+                       </li>
+                       <li class='nav-item'>
+                           <a class='nav-link btn btn-danger active text-light' href='logout.php'>Logout</a>
+                       </li>
+
+                   </ul>
+               </div>
+           </div>
+       </nav>
+
+   </header>'";
+
+    echo $navbar;
+
+    echo  "<h1 class='fw-bold container'>hallo, " . $_SESSION['username'] . "!</h1>";
 
     ?>
-    <main class="container text-center">
-        <h1 class="fw-bold">selamat datang <?php echo $_SESSION["username"]; ?>, Anda telah login</h1>
 
-        <a href="logout.php" class="btn btn-primary">Logout</a>
 
-    </main>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 
